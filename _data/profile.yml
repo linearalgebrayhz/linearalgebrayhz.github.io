@@ -1,18 +1,19 @@
-primary_name: "Your Name"
+primary_name: "Haozhe Yang"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Haozhe Yang"
 
 positions:
-- logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
-  name: Position 1 with logo
-- name: Position 2 without logo
+- logo: /assets/images/badges/hku-logo.jpg  # Logo is optional
+  name: BEng(Computer Science)
+- name: School of Computing and Data Science, the University of Hong Kong
 
 
-email: "your@email.com"
+email: "yhz2004@connect.hku.hk"
 # cv_link: link-to-your-cv-file
-gscholar: xFmQpf4AAAAJ  # This is an example, replace it with your own Google Scholar ID
-github: your_github_id
-twitter: your_twitter_id  # Do not include the '@' symbol
+# gscholar: 
+github: linearalgebrayhz
+# twitter: your_twitter_id  # Do not include the '@' symbol
+linkedin: 颢喆-杨-661a82264
 # wechat_qrcode: /assets/images/etc/wechat.jpg
 # wechat_prompt: >-
 #   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
@@ -22,29 +23,27 @@ twitter: your_twitter_id  # Do not include the '@' symbol
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    A <a href="https://en.wikipedia.org/wiki/Bicolor_cat" target="_blank">bicolor cat</a> is a cat with white fur combined with fur of some other colour, for example solid black, tabby, or colourpointed.
+    I am a third-year student majoring in Computer Science and Mathematics.
   </p>
   <p>
-    There are various patterns of a bicolour cat. These range from the Van-patterned (colour on the crown of the head 
-    and the tail only) to a solid colour with a throat locket or medallion. Bicolour coats are found in many cat breeds, 
-    as well as being common in domestic longhair and domestic shorthair cats.
+    My research interests include Machine Learning, Deep Learning, Computer Vision and Graphics. I gained much hands-on experience in AI research while working with projects on Large Language Models, NeRF, Gaussian Splatting and Diffusion Models.
   </p>
 
-portrait_url: /assets/images/photos/portrait.jpg
+portrait_url: /assets/images/photos/pic.jpg
 portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+  Photo by Hengyuan Zhang during our visit to Shunde, Guangdong, China.
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
+- name: Princeton University
+  logo: /assets/images/badges/PU_mark.png
   position: >- 
-    Department of Electrical Engineering and Computer Science <br/>
-    Ph.D. Student
-  date: Sep. 2024 - present
-- name: Peking University
-  logo: /assets/images/badges/PKU_red.png
-  position: B.S. in Computer Science
-  date: Sep. 2019 - Jul. 2021
+    Department of Computer Science <br/>
+    Junior Exchange Student
+  date: Jan. 2025 - May. 2025
+- name: The University of Hong Kong
+  logo: /assets/images/badges/hku-logo.jpg
+  position: BEng in Computer Science
+  date: Sep. 2022 - present
 
 # experience:
 # - name: Peking University
@@ -53,9 +52,9 @@ education:
 #   date: Sep. 2019 - Jul. 2021
 
 awards:
-- name: Award Name 2
+- name: Simon K.Y. Lee Hall Award for Academic Achievements
   date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+- name: Dean's Hounors List, Faculty of Engineering, The University of Hong Kong
+  date: 2023
+- name: Soong Ching Ling Scholarship, China Soong Ching Ling Foundation
+  date: 2022

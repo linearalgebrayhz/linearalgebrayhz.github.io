@@ -8,6 +8,9 @@ date: 2024-01-12 00:01:00 +0800
     <h2>Welcome to Showcase!</h2>
     <hr />
     <p>
+    I am still working on this website. You can take a look at my cat first :D
+    </p>
+    <!-- <p>
         <code>Showcase</code> is a page where you can show off almost anything you want. It can be the photo of your pets, your favorite books, your favorite projects, or anything else you want to show to the world.
     </p>
     <p>
@@ -19,5 +22,5 @@ date: 2024-01-12 00:01:00 +0800
     </p>
     <p>
         For a tidy layout, it is recommended to set the width of the cards to be either multiple of 3 or multiple of 4 for all cards, except for small badges that do not take up much space (width=1).
-    </p>
+    </p> -->
 </div>
