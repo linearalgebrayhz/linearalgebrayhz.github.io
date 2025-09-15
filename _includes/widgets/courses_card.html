@@ -1,0 +1,199 @@
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h4><i class="fas fa-graduation-cap"></i> Courses & Knowledge Base</h4>
+                <p class="text-muted mb-4">
+                    Here you can find information about courses I've taken and my knowledge areas.
+                </p>
+
+                <div class="row" data-masonry='{"percentPosition": true }'>
+                    {% if site.data.profile.courses.computer_science %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-laptop-code"></i> Computer Science Foundation</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.computer_science %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-secondary">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.courses.core_cs %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-code"></i> Core Computer Science</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.core_cs %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-primary">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.courses.mathematics %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-calculator"></i> Mathematics</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.mathematics %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-secondary">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.courses.statistics %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-chart-bar"></i> Statistics</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.statistics %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-secondary">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.courses.ai_ml %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-brain"></i> Machine Learning & AI</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.ai_ml %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-warning">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.courses.graphics %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-cube"></i> Graphics & Rendering</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.graphics %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-info">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.courses.other_cs_interests %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6><i class="fas fa-lightbulb"></i> Other CS Areas of Interest</h6>
+                            <ul class="list-unstyled mb-1">
+                                {% for course in site.data.profile.courses.other_cs_interests %}
+                                <li class="mb-2">
+                                    <div class="fw-bold">{{ course.name }}</div>
+                                    <div class="small text-muted">{{ course.description }}</div>
+                                    {% if course.note %}
+                                    <div class="small">
+                                        <span class="badge bg-dark">{{ course.note }}</span>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.skills %}
+                    <div class="col-md-12">
+                        <div class="mx-2 my-3">
+                            <h6><i class="fas fa-tools"></i> Technical Skills</h6>
+                            <div class="row">
+                                {% if site.data.profile.skills.programming_languages %}
+                                <div class="col-md-4 mb-2">
+                                    <div class="small fw-bold mb-1">Programming Languages</div>
+                                    {% for skill in site.data.profile.skills.programming_languages %}
+                                    <span class="badge bg-secondary me-1 mb-1">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                                
+                                {% if site.data.profile.skills.frameworks_libraries %}
+                                <div class="col-md-4 mb-2">
+                                    <div class="small fw-bold mb-1">Frameworks & Libraries</div>
+                                    {% for skill in site.data.profile.skills.frameworks_libraries %}
+                                    <span class="badge bg-info me-1 mb-1">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                                
+                                {% if site.data.profile.skills.tools_platforms %}
+                                <div class="col-md-4 mb-2">
+                                    <div class="small fw-bold mb-1">Tools & Platforms</div>
+                                    {% for skill in site.data.profile.skills.tools_platforms %}
+                                    <span class="badge bg-success me-1 mb-1">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

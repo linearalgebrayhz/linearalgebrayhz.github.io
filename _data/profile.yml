@@ -23,7 +23,7 @@ linkedin: 颢喆-杨-661a82264
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    I am a third-year student majoring in Computer Science and Mathematics.
+    I am a fourth-year student majoring in Computer Science and Mathematics. I am also interested in Statistics.
   </p>
   <p>
     My research interests include Machine Learning, Deep Learning, Computer Vision and Graphics. I gained much hands-on experience in AI research while working with projects on Large Language Models, NeRF, Gaussian Splatting and Diffusion Models.
@@ -45,11 +45,23 @@ education:
   position: BEng in Computer Science
   date: Sep. 2022 - present
 
-# experience:
-# - name: Peking University
+experience:
+- name: HKU CGVU Lab
+  logo: /assets/images/badges/hku-logo.jpg  # You can replace with company logo
+  position: Research Intern
+  date: 2025.5 - present
+# - name: Another Company
 #   logo: /assets/images/badges/PKU_red.png
 #   position: Research Intern
 #   date: Sep. 2019 - Jul. 2021
+
+teaching:
+- name: COMP1117 Computer Programming
+  date: 25-26 Semester 1
+- name: COMP2396 Object-Oriented Programming and Java
+  date: 24-25 Semester 1
+- name: COMP2113 Programming Technologies
+  date: 23-24 Semester 2
 
 awards:
 - name: Simon K.Y. Lee Hall Award for Academic Achievements
@@ -58,3 +70,132 @@ awards:
   date: 2023
 - name: Soong Ching Ling Scholarship, China Soong Ching Ling Foundation
   date: 2022
+
+courses:
+  computer_science:
+    - name: ENGG 1330 Computer Programming I
+      description: Introduction to programming concepts, basic algorithms and data structures
+    - name: ENGG 1340 Computer Programming II
+      description: Object-oriented programming, advanced data structures, software engineering principles
+    - name: CS61A Structure and Interpretation of Computer Programs
+      description: Python, functional programming, data structures, interpreters
+      note: Berkeley (Audit)
+  
+  core_cs:
+    - name: COMP 2119 Introduction to Data Structures and Algorithms
+      description: Fundamental data structures, algorithm analysis, sorting and searching algorithms
+    - name: COMP 2120 Computer Organization
+      description: Computer architecture, assembly language programming, memory hierarchy
+    - name: COMP 2121 Discrete Mathematics
+      description: Logic, sets, functions, relations, graph theory, combinatorics
+    - name: COMP 2396 Object-Oriented Programming and Java
+      description: Advanced OOP concepts, design patterns, Java programming
+    - name: COMP 3230 Principles of Operating Systems
+      description: Process management, memory management, file systems, synchronization
+    - name: COMP 3251 Algorithm Design
+      description: Advanced algorithm design techniques, dynamic programming, greedy algorithms
+      note: In Progress
+    - name: COMP 3278 Introduction to Database Management Systems
+      description: Database design, SQL, transaction processing, query optimization
+      note: In Progress
+  
+  ai_ml:
+    - name: COMP 2501 Introduction to Data Science and Engineering
+      description: Data manipulation, visualization, statistical hypothesis testing, machine learning basics with R
+    - name: COMP 3314 Machine Learning
+      description: Supervised learning, unsupervised learning, deep learning and CNNs
+    - name: COMP 3317 Computer Vision
+      description: Image processing, feature extraction, camera models, stereo vision, deep learning approaches
+    - name: CS188 Introduction to Artificial Intelligence
+      description: Search algorithms, Markov decision processes, reinforcement learning
+      note: Berkeley (In Progress)
+    - name: CS231n Deep Learning for Computer Vision
+      description: Convolutional neural networks, object detection, image segmentation
+      note: Stanford (Audit)
+    - name: CS529 Advanced Computer Vision
+      description: Graphical models, structured prediction, image segmentation, bundle adjustment, 3D reconstruction, Lie groups and Lie algebras.
+      note: Princeton
+    - name: Large Language Models
+      description: Transformers, fine-tuning, RLHF, natural language processing
+      note: Research
+    - name: Diffusion Models
+      description: Generative modeling, image synthesis, denoising diffusion probabilistic models
+      note: Research
+  
+  graphics:
+    - name: COMP3271 Computer Graphics
+      description: 3D graphics pipeline, rendering techniques, geometric transformations
+    # - name: COMP3360 Data-Driven Computer Animation
+    #   description: Physics-based animation, motion capture, character animation
+    #   note: In Progress
+    - name: COS526 Neural Rendering
+      description: NeRF, Gaussian Splatting, GANs and etc.
+      note: Princeton
+    - name: GAMES101 Introduction to Computer Graphics
+      note: UCSB (Audit) by Prof. Lingqi Yan
+    - name: GAMES103 Introduction to Computer Animation
+      note: GAMES Forum (In progress)
+  
+  other_cs_interests:
+    - name: COMP 3353 Bioinformatics
+      description: Computational methods for biological data analysis, sequence alignment, BWT algorithm 
+    - name: COMP 3366 Quantum Algorithms and Computer Architecture
+      description: Quantum computing principles, quantum algorithms, quantum computer architecture
+      note: In Progress
+  
+  mathematics:
+    - name: MATH 1851 Calculus and Ordinary Differential Equations
+      description: Single variable calculus, limits, derivatives, integrals, differential equations
+    - name: MATH 1853 Linear Algebra, Probability and Statistics
+      description: Matrix operations, vector spaces, basic probability and statistical concepts
+    - name: MATH 2012 Fundamental Concepts of Mathematics
+      description: Set theory, logic, functions, relations, mathematical proofs
+    - name: MATH 2101 Linear Algebra I
+      description: Systems of linear equations, vector spaces, basis, dimension, eigenvalues and eigenvectors
+    - name: MATH 2102 Linear Algebra II
+      description: Advanced linear algebra, canonical forms, applications to differential equations
+      note: In Progress
+    - name: MATH 2211 Multivariable Calculus
+      description: Partial derivatives, multiple integrals, vector calculus, Green's and Stokes' theorems
+    - name: MATH 2241 Introduction to Mathematical Analysis
+      description: set and countability, sequences, series, continuity, differentiation, integration
+      note: In Progress
+    - name: MATH 3601 Numerical Analysis
+      description: Numerical methods for solving equations, interpolation, integration, differential equations
+      note: In Progress
+    - name: MATH 3904 Introduction to Optimization
+      description: Constrained and unconstrained optimization, convexity, duality, numerical algorithms
+    - name: APC 350 Introduction to Differential Equations
+      description: Existence and uniqueness theorems, linear and nonlinear ODEs, Fourier series, PDEs
+      note: Princeton
+  
+  statistics:
+    - name: STAT 2601 Probability and Statistics I
+      description: Probability theory, counting, random variables, distributions, CDF/PMF/PDF, moment generating functions, conditional distribution, Multivariate distributions
+    - name: STAT 2602 Probability and Statistics II
+      note: In Progress
+    - name: ORF 309 Stochastic Process
+      description: Random Processes, Poisson process, Random Walks, Brownian Motion, Markov chains
+      note: Princeton
+
+
+skills:
+  programming_languages:
+    - Python
+    - Java
+    - C++
+    - R
+    - HTML & CSS & JS
+    - CUDA
+  
+  frameworks_libraries:
+    - PyTorch
+    - OpenCV
+    - NumPy & Pandas & Matplotlib
+    - Taichi
+  
+  tools_platforms:
+    - Git
+    - Docker
+    - Linux
+    - Jupyter
