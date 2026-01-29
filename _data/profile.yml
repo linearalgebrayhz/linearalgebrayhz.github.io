@@ -50,12 +50,18 @@ experience:
   logo: /assets/images/badges/hku-logo.jpg  # You can replace with company logo
   position: Research Intern
   date: 2025.5 - present
+- name: Rights and Interests Committee (RIC), The University of Hong Kong
+  logo: /assets/images/badges/Pure_RIC_Logo.png
+  position: Committee Member
+  date: Oct. 2023 - Oct. 2025
 # - name: Another Company
 #   logo: /assets/images/badges/PKU_red.png
 #   position: Research Intern
 #   date: Sep. 2019 - Jul. 2021
 
 teaching:
+- name: COMP2113 Programming Technologies
+  date: 25-26 Semester 1
 - name: COMP1117 Computer Programming
   date: 25-26 Semester 1
 - name: COMP2396 Object-Oriented Programming and Java
@@ -76,9 +82,12 @@ courses:
     - name: ENGG 1330 Computer Programming I
       description: Introduction to programming concepts, basic algorithms and data structures
     - name: ENGG 1340 Computer Programming II
-      description: Object-oriented programming, advanced data structures, software engineering principles
+      description: Linux, shell script, git, C++/C programming
     - name: CS61A Structure and Interpretation of Computer Programs
       description: Python, functional programming, data structures, interpreters
+      note: Berkeley (Audit)
+    - name: CS61B Data Structures and Algorithms
+      description: Java, data structures, algorithm analysis
       note: Berkeley (Audit)
   
   core_cs:
@@ -125,23 +134,24 @@ courses:
   graphics:
     - name: COMP3271 Computer Graphics
       description: 3D graphics pipeline, rendering techniques, geometric transformations
-    # - name: COMP3360 Data-Driven Computer Animation
-    #   description: Physics-based animation, motion capture, character animation
-    #   note: In Progress
+    - name: COMP3360 Data-Driven Computer Animation
+      description: Physics-based animation, motion capture, character animation, learning based methods, physics simulation
+      note: In Progress
     - name: COS526 Neural Rendering
       description: NeRF, Gaussian Splatting, GANs and etc.
       note: Princeton
     - name: GAMES101 Introduction to Computer Graphics
       note: UCSB (Audit) by Prof. Lingqi Yan
     - name: GAMES103 Introduction to Computer Animation
-      note: GAMES Forum (In progress)
+      note: GAMES Forum by Prof. Huamin Wang
+    - name: GAMES105 Introduction to Character Animation
+      note: GAMES Forum by Prof. Liu Libin (In Progress)
   
   other_cs_interests:
     - name: COMP 3353 Bioinformatics
       description: Computational methods for biological data analysis, sequence alignment, BWT algorithm 
     - name: COMP 3366 Quantum Algorithms and Computer Architecture
       description: Quantum computing principles, quantum algorithms, quantum computer architecture
-      note: In Progress
   
   mathematics:
     - name: MATH 1851 Calculus and Ordinary Differential Equations
@@ -153,16 +163,14 @@ courses:
     - name: MATH 2101 Linear Algebra I
       description: Systems of linear equations, vector spaces, basis, dimension, eigenvalues and eigenvectors
     - name: MATH 2102 Linear Algebra II
-      description: Advanced linear algebra, canonical forms, applications to differential equations
+      description: Advanced linear algebra
       note: In Progress
     - name: MATH 2211 Multivariable Calculus
       description: Partial derivatives, multiple integrals, vector calculus, Green's and Stokes' theorems
     - name: MATH 2241 Introduction to Mathematical Analysis
-      description: set and countability, sequences, series, continuity, differentiation, integration
-      note: In Progress
+      description: field and countability, real number system,sequences, series, continuity, differentiation, integration
     - name: MATH 3601 Numerical Analysis
       description: Numerical methods for solving equations, interpolation, integration, differential equations
-      note: In Progress
     - name: MATH 3904 Introduction to Optimization
       description: Constrained and unconstrained optimization, convexity, duality, numerical algorithms
     - name: APC 350 Introduction to Differential Equations
@@ -173,7 +181,7 @@ courses:
     - name: STAT 2601 Probability and Statistics I
       description: Probability theory, counting, random variables, distributions, CDF/PMF/PDF, moment generating functions, conditional distribution, Multivariate distributions
     - name: STAT 2602 Probability and Statistics II
-      note: In Progress
+      description: Maximum likelihood estimation, hypothesis testing, confidence intervals
     - name: ORF 309 Stochastic Process
       description: Random Processes, Poisson process, Random Walks, Brownian Motion, Markov chains
       note: Princeton
@@ -183,14 +191,14 @@ skills:
   programming_languages:
     - Python
     - Java
-    - C++
+    - C++/C
     - R
     - HTML & CSS & JS
-    - CUDA
   
   frameworks_libraries:
     - PyTorch
     - OpenCV
+    - OpenGL & GLSL
     - NumPy & Pandas & Matplotlib
     - Taichi
   
