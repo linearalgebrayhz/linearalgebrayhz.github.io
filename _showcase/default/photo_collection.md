@@ -11,7 +11,6 @@ images:
 - src: ./assets/images/etc/GS-lego.png
   title: Gaussian Splatting
   desc: Coursework in COS529 "Neural Rendering"
-- src: https://picsum.photos/seed/third33/800/800
 ---
 
 {% include widgets/carousel.html id=page.id images=page.images height=page.height %}

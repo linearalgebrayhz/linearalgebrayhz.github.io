@@ -18,8 +18,10 @@
                 {% for link in item.links %}
                 {% if link[1].url %}
                 <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
-                {% else %}
+                {% elsif link[1] %}
                 <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+                {% else %}
+                <span class="text-muted" style="opacity:0.5;">[{{ link[0] }}]</span>
                 {% endif %}
                 {% endfor %}
             </p>
@@ -37,13 +39,15 @@
                 <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
                 <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
                 <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
-                
+
                 <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
                     {% for link in item.links %}
                     {% if link[1].url %}
                     <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
-                    {% else %}
+                    {% elsif link[1] %}
                     <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+                    {% else %}
+                    <span class="text-muted" style="opacity:0.5;">[{{ link[0] }}]</span>
                     {% endif %}
                     {% endfor %}
                 </p>

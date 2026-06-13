@@ -1,0 +1,458 @@
+---
+layout: default
+title: Projects
+navbar_title: Projects
+---
+
+<style>
+.project-card {
+    border-left: 4px solid #dee2e6;
+    transition: box-shadow 0.18s ease;
+}
+.project-card:hover {
+    box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.10) !important;
+}
+.project-card.cat-vision   { border-left-color: #7c3aed; }
+.project-card.cat-graphics { border-left-color: #059669; }
+.project-card.cat-systems  { border-left-color: #dc2626; }
+.project-card.cat-ai       { border-left-color: #2563eb; }
+.project-card.cat-software { border-left-color: #d97706; }
+.project-card.cat-teaching { border-left-color: #6b7280; }
+
+.proj-tech-badge {
+    font-size: 0.70em;
+    font-weight: 500;
+    padding: 0.20em 0.65em;
+    border-radius: 2em;
+    margin-right: 3px;
+    margin-bottom: 4px;
+    display: inline-block;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+}
+
+.proj-context {
+    font-size: 0.78em;
+    color: #6b7280;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}
+
+.proj-section-header {
+    border-left: 3px solid #d1d5db;
+    padding-left: 0.8rem;
+    margin-bottom: 1.25rem;
+}
+
+.proj-section-header h4 {
+    margin-bottom: 0.1rem;
+}
+
+.unavail-note {
+    font-size: 0.72em;
+    color: #9ca3af;
+    font-style: italic;
+}
+</style>
+
+<div class="row mt-2 mb-3">
+    <div class="col-12">
+        <h1 class="mb-1">Projects</h1>
+        <p class="text-muted mb-0">
+            Research, systems, and engineering work spanning 3D vision, computer graphics, AI, and software development.
+            11 projects across 4 years at HKU and Princeton.
+        </p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 · 3D Vision & Neural Rendering
+     ═══════════════════════════════════════════════════════════ -->
+<div class="proj-section-header mt-4">
+    <h4 class="text-dark">3D Vision &amp; Neural Rendering</h4>
+    <small class="text-muted">Princeton University Exchange &middot; Spring 2025</small>
+</div>
+<div class="row mb-2">
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-vision h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">Neural Character Generation</h6>
+                <p class="proj-context">
+                    <i class="fas fa-university mr-1"></i>Princeton &middot; COS526: Neural Rendering &middot; Spring 2025
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">NeRF</span>
+                    <span class="proj-tech-badge">PyTorch</span>
+                    <span class="proj-tech-badge">Python</span>
+                    <span class="proj-tech-badge">3D Vision</span>
+                    <span class="proj-tech-badge">Volume Rendering</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Designed and implemented a few-shot 3D character generation pipeline built on Neural Radiance Fields (NeRF).
+                    The system learns a continuous volumetric radiance field of human avatars from sparse RGB inputs and synthesizes
+                    photorealistic novel views via differentiable volume rendering, exploring the viability of neural implicit
+                    representations for avatar digitization.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://github.com/satrajitghosh183/NeuralCharacterGeneration" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-vision h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">Transformation Transfer via Diffusion Models</h6>
+                <p class="proj-context">
+                    <i class="fas fa-university mr-1"></i>Princeton &middot; COS529: Advanced Computer Vision &middot; Spring 2025
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">Diffusion Models</span>
+                    <span class="proj-tech-badge">LoRA</span>
+                    <span class="proj-tech-badge">ControlNet</span>
+                    <span class="proj-tech-badge">FLUX</span>
+                    <span class="proj-tech-badge">PyTorch</span>
+                    <span class="proj-tech-badge">Depth Estimation</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Developed a method to learn and transfer geometric transformations across image pairs using large-scale
+                    text-to-image diffusion models. Fine-tuned FLUX through parameter-efficient Low-Rank Adaptation (LoRA)
+                    to encode relative camera pose and spatial transformations implicitly. Extended the pipeline with
+                    ControlNet-based depth conditioning to improve structural fidelity in challenging cross-domain transfer.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://github.com/linearalgebrayhz/COS529-Transformation-Transfer" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 · Computer Graphics
+     ═══════════════════════════════════════════════════════════ -->
+<div class="proj-section-header">
+    <h4 class="text-dark">Computer Graphics</h4>
+    <small class="text-muted">GAMES Forum Self-Study Courses</small>
+</div>
+<div class="row mb-2">
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-graphics h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">Physics-Based Animation (GAMES103)</h6>
+                <p class="proj-context">
+                    <i class="fas fa-book mr-1"></i>Self-Study &middot; GAMES Forum, Prof. Huamin Wang &middot; 2024
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">C#</span>
+                    <span class="proj-tech-badge">Unity</span>
+                    <span class="proj-tech-badge">Rigid Body Dynamics</span>
+                    <span class="proj-tech-badge">FEM</span>
+                    <span class="proj-tech-badge">PBD</span>
+                    <span class="proj-tech-badge">Fluid Simulation</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Completed GAMES103 (Introduction to Computer Animation), implementing foundational physics simulation
+                    algorithms from scratch in Unity using C#. Topics include impulse-based rigid body collision resolution,
+                    spring-mass systems, hyperelastic solid simulation via the Finite Element Method (FEM), and grid-based
+                    fluid dynamics via Navier-Stokes. Emphasis on numerical stability, energy conservation, and real-time performance.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <span class="btn btn-sm btn-outline-secondary disabled">
+                    <i class="fab fa-github mr-1"></i>GitHub (Soon)
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-graphics h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">
+                    Software Rasterizer &amp; Ray Tracer (GAMES101)
+                </h6>
+                <p class="proj-context">
+                    <i class="fas fa-book mr-1"></i>Self-Study &middot; GAMES Forum, Prof. Lingqi Yan (UCSB) &middot; 2023
+                    <span class="ml-2 unavail-note"><i class="fas fa-info-circle mr-1"></i>Source unavailable &middot; renders preserved</span>
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">C++</span>
+                    <span class="proj-tech-badge">Ray Tracing</span>
+                    <span class="proj-tech-badge">BVH</span>
+                    <span class="proj-tech-badge">Blinn-Phong</span>
+                    <span class="proj-tech-badge">Rasterization</span>
+                    <span class="proj-tech-badge">CMake</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Built a complete software rasterization pipeline and path tracer in C++ from first principles: triangle
+                    rasterization, viewport and projection transformations, the Blinn-Phong shading model, and texture mapping.
+                    Additionally hand-crafted a path tracer with Bounding Volume Hierarchy (BVH) acceleration for global
+                    illumination. Deepened low-level C++ proficiency, OOP design, and CMake build system expertise.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <span class="btn btn-sm btn-light border text-muted" style="cursor:default; font-size:0.78em;">
+                    <i class="fas fa-images mr-1"></i>Demo Gallery Available
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 · Systems Programming
+     ═══════════════════════════════════════════════════════════ -->
+<div class="proj-section-header">
+    <h4 class="text-dark">Systems Programming</h4>
+    <small class="text-muted">HKU &middot; COMP3230: Principles of Operating Systems</small>
+</div>
+<div class="row mb-2">
+
+    <div class="col-md-10 col-lg-8 mb-4">
+        <div class="card project-card cat-systems h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">Multi-Threaded LLM Inference Engine</h6>
+                <p class="proj-context">
+                    <i class="fas fa-university mr-1"></i>HKU &middot; COMP3230: Principles of Operating Systems &middot; Fall 2024
+                    <span class="ml-2 unavail-note"><i class="fas fa-lock mr-1"></i>Source proprietary to course</span>
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">C</span>
+                    <span class="proj-tech-badge">POSIX Threads</span>
+                    <span class="proj-tech-badge">Linux Syscalls</span>
+                    <span class="proj-tech-badge">Thread Pool</span>
+                    <span class="proj-tech-badge">Multi-Head Attention</span>
+                    <span class="proj-tech-badge">Systems Programming</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Implemented a multi-threaded LLM inference runtime from the ground up in pure C, using raw POSIX threads
+                    and Linux system calls with zero third-party concurrency libraries. Designed a custom work-stealing thread pool
+                    to parallelize Multi-Head Attention computation and matrix-matrix multiplication across CPU cores,
+                    achieving significant inference throughput improvements over a single-threaded baseline. Demonstrates
+                    proficiency in low-level concurrency, cache-aware memory management, and performance-critical systems engineering.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <span class="btn btn-sm btn-light border text-muted" style="cursor:default; font-size:0.78em;">
+                    <i class="fas fa-lock mr-1"></i>Code Proprietary
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 4 · AI & Software Engineering
+     ═══════════════════════════════════════════════════════════ -->
+<div class="proj-section-header">
+    <h4 class="text-dark">AI &amp; Software Engineering</h4>
+    <small class="text-muted">Hackathon &middot; HKU Course Projects</small>
+</div>
+<div class="row mb-2">
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-ai h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">VeriPal: AI Desktop Companion</h6>
+                <p class="proj-context">
+                    <i class="fas fa-trophy mr-1"></i>IBM WatsonX Hackathon &middot; 2024
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">Python</span>
+                    <span class="proj-tech-badge">LLM API</span>
+                    <span class="proj-tech-badge">IBM WatsonX</span>
+                    <span class="proj-tech-badge">Agent Design</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Built an interactive AI-powered desktop productivity companion during the IBM WatsonX Hackathon, integrating
+                    large language model APIs as the core reasoning backend. Designed agentic interaction loops with memory and
+                    tool-use primitives, enabling context-aware conversation, multi-step task planning, and real-time user
+                    assistance under competitive time constraints.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://github.com/linearalgebrayhz/VeriPal" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-software h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">HKUSocial: Full-Stack Social Media Platform</h6>
+                <p class="proj-context">
+                    <i class="fas fa-university mr-1"></i>HKU &middot; COMP3278: Database Management Systems &middot; Spring 2026
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">PostgreSQL</span>
+                    <span class="proj-tech-badge">Python</span>
+                    <span class="proj-tech-badge">FastAPI</span>
+                    <span class="proj-tech-badge">REST API</span>
+                    <span class="proj-tech-badge">Full-Stack</span>
+                    <span class="proj-tech-badge">ER Modeling</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Designed and implemented a full-stack social media platform for COMP3278. Engineered a normalized
+                    PostgreSQL schema covering users, posts, social graphs, and feed ranking, and built an asynchronous
+                    RESTful backend with Python FastAPI integrated with a responsive web frontend. Demonstrated
+                    end-to-end software engineering from schema design and query optimization to API design and
+                    frontend integration.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://github.com/linearalgebrayhz/comp3278-social-media" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-software h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">Big Two: Networked Multiplayer Card Game</h6>
+                <p class="proj-context">
+                    <i class="fas fa-university mr-1"></i>HKU &middot; COMP2396: Object-Oriented Programming &amp; Java &middot; 2023
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">Java</span>
+                    <span class="proj-tech-badge">OOP Design Patterns</span>
+                    <span class="proj-tech-badge">Socket Networking</span>
+                    <span class="proj-tech-badge">Multiplayer</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Developed a fully networked, turn-based multiplayer card game (Big Two) in Java, adhering to
+                    enterprise-level OOP design principles. Applied inheritance hierarchies, the Strategy pattern for
+                    rule encapsulation, and the Observer pattern for decoupled UI updates. Implemented real-time
+                    client-server communication via Java Socket API, supporting concurrent sessions with synchronized
+                    game state management.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <span class="btn btn-sm btn-outline-secondary disabled">
+                    <i class="fab fa-github mr-1"></i>GitHub (Soon)
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 · Coursework & Teaching
+     ═══════════════════════════════════════════════════════════ -->
+<div class="proj-section-header">
+    <h4 class="text-dark">Coursework &amp; Teaching</h4>
+    <small class="text-muted">Programming Foundations &middot; Mentorship &middot; Hardware Design</small>
+</div>
+<div class="row mb-2">
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-teaching h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">CS61A: Structure and Interpretation of Computer Programs</h6>
+                <p class="proj-context">
+                    <i class="fas fa-book mr-1"></i>UC Berkeley CS61A &middot; Audit &middot; Fall 2024
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">Python</span>
+                    <span class="proj-tech-badge">Scheme</span>
+                    <span class="proj-tech-badge">PL Theory</span>
+                    <span class="proj-tech-badge">Functional Programming</span>
+                    <span class="proj-tech-badge">Interpreters</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Completed all projects and labs from UC Berkeley's rigorous CS61A course. Culminating project: a full
+                    Scheme interpreter including an eval-apply evaluator, lexical scoping with first-class environments,
+                    and tail-call optimization. Substantially deepened understanding of programming language theory,
+                    higher-order functions, closures, and execution model design.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://github.com/linearalgebrayhz/CS61A-fall24" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-teaching h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">COMP1117: Python Course Teaching Materials</h6>
+                <p class="proj-context">
+                    <i class="fas fa-chalkboard-teacher mr-1"></i>Teaching Assistant &middot; HKU &middot; 2024–2025
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">Python</span>
+                    <span class="proj-tech-badge">Pedagogy</span>
+                    <span class="proj-tech-badge">Technical Writing</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Served as Teaching Assistant for HKU's COMP1117 (Computer Programming I) and produced comprehensive
+                    lecture notes, worked examples, and supplementary reference materials. Developed content covering
+                    algorithmic thinking, core data structures, and object-oriented design with scaffolded pedagogical
+                    progression, supporting over 100 undergraduate students across multiple semesters.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://github.com/linearalgebrayhz/COMP1117-25fall" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fab fa-github mr-1"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card project-card cat-teaching h-100 shadow-sm border-0">
+            <div class="card-body pb-2">
+                <h6 class="font-weight-bold mb-1">Soccer Robot: Autonomous Robotic System</h6>
+                <p class="proj-context">
+                    <i class="fas fa-university mr-1"></i>HKU InnoAcademy Design Project &middot; Year 1 (2022–2023)
+                </p>
+                <div class="mb-3">
+                    <span class="proj-tech-badge">Arduino</span>
+                    <span class="proj-tech-badge">C</span>
+                    <span class="proj-tech-badge">SolidWorks</span>
+                    <span class="proj-tech-badge">3D Printing</span>
+                    <span class="proj-tech-badge">Embedded Systems</span>
+                    <span class="proj-tech-badge">Robotics</span>
+                </div>
+                <p class="card-text small text-secondary">
+                    Executed a full hardware-software co-design project to build an autonomous soccer-playing robot.
+                    Designed mechanical components in SolidWorks and fabricated parts via laser cutting and 3D printing.
+                    Programmed motion control and sensor integration on an Arduino microcontroller in C, implementing
+                    autonomous kinematics for ball tracking and goal-seeking behavior across mechanical, electrical,
+                    and software engineering disciplines.
+                </p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+                <a href="https://innoacademy.engg.hku.hk/soccer-robot2023ii/" target="_blank"
+                   class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-external-link-alt mr-1"></i>Project Page
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
