@@ -69,8 +69,8 @@ The solution to equation (1) is a function called the flow:
 $$
 \begin{equation}
 \begin{aligned}
-\psi &: \mathbb{R}^d \times [0,1] \to \mathbb{R}^d, \quad (x_0, t) \mapsto \psi_t(x_0), \\
-\frac{d}{dt} \psi_t(x_0) &= u_t(\psi_t(x_0)), \quad \psi_0(x_0) = x_0
+\psi : \mathbb{R}^d \times [0,1] \to \mathbb{R}^d, \quad (x_0, t) \mapsto \psi_t(x_0), \\
+\frac{d}{dt} \psi_t(x_0) = u_t(\psi_t(x_0)), \quad \psi_0(x_0) = x_0
 \end{aligned}
 \tag{2}
 \end{equation}
@@ -130,8 +130,8 @@ Require: vector field $$u_t^{\theta}$$, number of steps $$n$$
 2. Set step size $$h = 1/n$$
 3. Sample $$X_0 \sim p_{init}$$
 4. For $$i = 0, 1, \ldots, n-1$$ do
-    - $$X_{t + h} = X_t + h\, u_t^{\theta}(X_t)$$
-    - $$t \leftarrow t + h$$
+    - $$X_{t + h} = X_t + h\, u_t^{\theta}(X_t)$$.
+    - $$t \leftarrow t + h$$.
 5. end for
 6. Return $$X_1$$
 
@@ -305,8 +305,8 @@ Require: neural network vector field $$u_t^{\theta}$$, diffusion coefficient $$\
 2. Set step size $$h = 1/n$$
 3. Sample $$X_0 \sim p_{init}$$
 4. For $$i = 0, 1, \ldots, n-1$$ do
-    - $$X_{t + h} = X_t + h\, u_t^{\theta}(X_t) + \sqrt{h}\, \sigma_t \epsilon_t, \quad \epsilon_t \sim \mathcal{N}(0, I_d)$$
-    - $$t \leftarrow t + h$$
+    - $$X_{t + h} = X_t + h\, u_t^{\theta}(X_t) + \sqrt{h}\, \sigma_t \epsilon_t, \quad \epsilon_t \sim \mathcal{N}(0, I_d)$$.
+    - $$t \leftarrow t + h$$.
 5. end for
 6. Return $$X_1$$
 
