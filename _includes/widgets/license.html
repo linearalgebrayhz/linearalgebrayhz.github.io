@@ -1,0 +1,46 @@
+{%- comment -%}
+Renders a license notice for a post.
+Usage: {% include widgets/license.html license=page.license %}
+Supported keys: cc-by, cc-by-sa, cc-by-nc, cc-by-nc-sa, cc-by-nc-nd, cc-by-nd, cc0.
+Any other value is shown verbatim as the license name (no link).
+{%- endcomment -%}
+{%- assign lic = include.license -%}
+{%- assign lic_url = '' -%}
+{%- assign lic_icons = 'creative-commons' -%}
+{%- case lic -%}
+  {%- when 'cc-by' -%}
+    {%- assign lic_name = 'CC BY 4.0' -%}
+    {%- assign lic_url = 'https://creativecommons.org/licenses/by/4.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-by' -%}
+  {%- when 'cc-by-sa' -%}
+    {%- assign lic_name = 'CC BY-SA 4.0' -%}
+    {%- assign lic_url = 'https://creativecommons.org/licenses/by-sa/4.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-by,creative-commons-sa' -%}
+  {%- when 'cc-by-nc' -%}
+    {%- assign lic_name = 'CC BY-NC 4.0' -%}
+    {%- assign lic_url = 'https://creativecommons.org/licenses/by-nc/4.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-by,creative-commons-nc' -%}
+  {%- when 'cc-by-nc-sa' -%}
+    {%- assign lic_name = 'CC BY-NC-SA 4.0' -%}
+    {%- assign lic_url = 'https://creativecommons.org/licenses/by-nc-sa/4.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-by,creative-commons-nc,creative-commons-sa' -%}
+  {%- when 'cc-by-nc-nd' -%}
+    {%- assign lic_name = 'CC BY-NC-ND 4.0' -%}
+    {%- assign lic_url = 'https://creativecommons.org/licenses/by-nc-nd/4.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-by,creative-commons-nc,creative-commons-nd' -%}
+  {%- when 'cc-by-nd' -%}
+    {%- assign lic_name = 'CC BY-ND 4.0' -%}
+    {%- assign lic_url = 'https://creativecommons.org/licenses/by-nd/4.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-by,creative-commons-nd' -%}
+  {%- when 'cc0' -%}
+    {%- assign lic_name = 'CC0 1.0 (Public Domain)' -%}
+    {%- assign lic_url = 'https://creativecommons.org/publicdomain/zero/1.0/' -%}
+    {%- assign lic_icons = 'creative-commons,creative-commons-zero' -%}
+  {%- else -%}
+    {%- assign lic_name = lic -%}
+{%- endcase -%}
+{%- assign icon_list = lic_icons | split: ',' -%}
+<div class="post-license small">
+    <span class="post-license-icons">{% for ic in icon_list %}<i class="fa-brands fa-{{ ic }}"></i> {% endfor %}</span>
+    This work is licensed under {% if lic_url %}<a href="{{ lic_url }}" target="_blank" rel="noopener noreferrer">{{ lic_name }}</a>{% else %}{{ lic_name }}{% endif %}.
+</div>

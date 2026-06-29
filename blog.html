@@ -19,6 +19,13 @@ navbar_title: Blog
                         {% for post in posts %}
                         <div class="col-md-6 mb-4">
                             <div class="card h-100 border-1">
+                                {% if post.image %}
+                                <a href="{{ post.url | relative_url }}">
+                                    <img data-src="{{ post.image | relative_url }}" alt="{{ post.title }}"
+                                         class="lazy post-card-img"
+                                         src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+                                </a>
+                                {% endif %}
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <a href="{{ post.url | relative_url }}" class="text-decoration-none">
@@ -28,7 +35,7 @@ navbar_title: Blog
                                     <p class="card-text text-muted small">
                                         <i class="fas fa-calendar-alt"></i> {{ post.date | date: "%B %d, %Y" }}
                                         {% if post.category %}
-                                        <span class="badge bg-secondary ms-2">{{ post.category }}</span>
+                                        <span class="category-badge">{{ post.category }}</span>
                                         {% endif %}
                                     </p>
                                     {% if post.excerpt %}

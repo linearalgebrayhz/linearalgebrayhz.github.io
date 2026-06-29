@@ -15,13 +15,13 @@ layout: default
                         <span class="ms-3"><i class="fas fa-user"></i> {{ page.author }}</span>
                         {% endif %}
                         {% if page.category %}
-                        <span class="badge bg-primary ms-3">{{ page.category }}</span>
+                        <span class="category-badge">{{ page.category }}</span>
                         {% endif %}
                     </p>
                     {% if page.tags %}
                     <div class="mb-3">
                         {% for tag in page.tags %}
-                        <span class="badge bg-light text-dark me-1">#{{ tag }}</span>
+                        <span class="tag-badge">#{{ tag }}</span>
                         {% endfor %}
                     </div>
                     {% endif %}
@@ -31,6 +31,20 @@ layout: default
                 <div class="blog-content">
                     {{ content }}
                 </div>
+
+                <!-- Acknowledgement & License -->
+                {% if page.acknowledgement or page.license %}
+                <div class="post-meta-box mt-4 p-3">
+                    {% if page.acknowledgement %}
+                    <div class="post-acknowledgement small mb-2">
+                        <i class="fas fa-graduation-cap me-1"></i><strong>Acknowledgement.</strong> {{ page.acknowledgement | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}
+                    </div>
+                    {% endif %}
+                    {% if page.license %}
+                    {% include widgets/license.html license=page.license %}
+                    {% endif %}
+                </div>
+                {% endif %}
 
                 <!-- Post Footer -->
                 <hr class="my-4">
