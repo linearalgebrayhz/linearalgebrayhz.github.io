@@ -2,8 +2,8 @@
 layout: post
 title: "Flow Matching and Diffusion Models 1"
 date: 2026-06-21
-category: "General"
-tags: [flow matching, diffusion models, machine learning]
+category: "Machine Learning"
+tags: [flow matching, diffusion models, generative models]
 author: "Haozhe Yang"
 image: /assets/images/posts/flow-matching-1.png
 license: cc-by-nc-sa

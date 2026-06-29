@@ -20,6 +20,14 @@ markdown: kramdown
 plugins:
   - jekyll-email-protect
 
+# Stable post URLs, independent of category, so re-categorizing a post never
+# breaks its link. (Changing this requires restarting `jekyll serve`.)
+permalink: /blog/:year/:month/:day/:title/
+
+# Blog taxonomy — pick ONE broad category per post (shown as the card badge),
+# and use `tags` for finer topics. Suggested categories:
+#   Machine Learning, Computer Vision, Graphics, Algorithms, Mathematics
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
