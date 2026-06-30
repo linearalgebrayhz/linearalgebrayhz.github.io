@@ -5,7 +5,7 @@ date: 2026-06-21
 category: "Machine Learning"
 tags: [flow matching, diffusion models, generative models]
 author: "Haozhe Yang"
-image: /assets/images/posts/flow-matching-1.png
+image: /assets/images/posts/flow-matching-1.svg
 license: cc-by-nc-sa
 acknowledgement: "These notes are based on MIT Course 6.S184: *Generative AI with Stochastic Differential Equations* ([course site](https://diffusion.csail.mit.edu/))."
 excerpt: "This is the first post in a series of notes on MIT's Introduction to Flow Matching and Diffusion Models 2026. In this post, we will cover the basics of data modalities and how generation can be modeled as sampling from a data distribution."

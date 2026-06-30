@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="row mt-3">
-    <div class="col-lg-8 mx-auto">
+    <div class="col-lg-10 mx-auto">
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 <!-- Post Header -->
@@ -113,5 +113,31 @@ layout: default
     margin: 1rem 0;
     color: #6c757d;
     font-style: italic;
+}
+
+/* Long display equations: let them scroll horizontally instead of
+   overflowing the page (e.g. the flow-matching loss derivations). */
+.blog-content .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* On wider screens, let display math use a bit more horizontal room than
+   the prose column (bleed into the card padding). */
+@media (min-width: 992px) {
+    .blog-content .katex-display {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+    }
+}
+
+/* KaTeX renders the equation number as an absolutely-positioned .tag at the
+   right edge of .katex-html, while the formula is centered in the full
+   width — so a wide equation slides under the number. Reserve a right
+   gutter on numbered equations so the formula can never reach the number. */
+.blog-content .katex-display > .katex > .katex-html:has(> .tag) {
+    padding-right: 2.75em;
 }
 </style>
