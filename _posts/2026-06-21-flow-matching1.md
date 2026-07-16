@@ -125,18 +125,21 @@ $$
 X_1 \sim p_{data} \quad \text{where } X_1 = \psi_1^{\theta}(X_0) \text{ and } X_0 \sim p_{init}
 $$
 
-Algorithm to sample from a flow model:
-
-Require: vector field $$u_t^{\theta}$$, number of steps $$n$$
-
-1. Set $$t = 0$$
-2. Set step size $$h = 1/n$$
-3. Sample $$X_0 \sim p_{init}$$
-4. For $$i = 0, 1, \ldots, n-1$$ do
-    - $$X_{t + h} = X_t + h\, u_t^{\theta}(X_t)$$.
-    - $$t \leftarrow t + h$$.
-5. end for
-6. Return $$X_1$$
+```pseudocode
+\begin{algorithm}
+\caption{Sampling from a flow model}
+\begin{algorithmic}
+\REQUIRE vector field $u_t^\theta$, number of steps $n$
+\STATE initialize $t \gets 0$, step size $h \gets 1/n$
+\STATE sample $X_0 \sim p_{\text{init}}$
+\FOR{$i = 0, 1, \ldots, n-1$}
+    \STATE $X_{t+h} \gets X_t + h\, u_t^\theta(X_t)$
+    \STATE $t \gets t + h$
+\ENDFOR
+\RETURN $X_1$
+\end{algorithmic}
+\end{algorithm}
+```
 
 ## Diffusion Models
 
@@ -300,18 +303,22 @@ where $$h = \frac{1}{n}$$ is a step-size hyperparameter for $$n \in \mathbb{N}$$
 
 We can now finally construct a generative model via an SDE in the same way as for ODEs. The goal is still to convert a simple distribution $$p_{init}$$ into a complex data distribution $$p_{data}$$.
 
-Algorithm to sample from a diffusion model:
-
-Require: neural network vector field $$u_t^{\theta}$$, diffusion coefficient $$\sigma_t$$, number of steps $$n$$
-
-1. Set $$t = 0$$
-2. Set step size $$h = 1/n$$
-3. Sample $$X_0 \sim p_{init}$$
-4. For $$i = 0, 1, \ldots, n-1$$ do
-    - $$X_{t + h} = X_t + h\, u_t^{\theta}(X_t) + \sqrt{h}\, \sigma_t \epsilon_t, \quad \epsilon_t \sim \mathcal{N}(0, I_d)$$.
-    - $$t \leftarrow t + h$$.
-5. end for
-6. Return $$X_1$$
+```pseudocode
+\begin{algorithm}
+\caption{Sampling from a diffusion model}
+\begin{algorithmic}
+\REQUIRE vector field $u_t^\theta$, diffusion coefficient $\sigma_t$, number of steps $n$
+\STATE initialize $t \gets 0$, step size $h \gets 1/n$
+\STATE sample $X_0 \sim p_{\text{init}}$
+\FOR{$i = 0, 1, \ldots, n-1$}
+    \STATE sample $\epsilon_t \sim \mathcal{N}(0, I_d)$
+    \STATE $X_{t+h} \gets X_t + h\, u_t^\theta(X_t) + \sqrt{h}\, \sigma_t \epsilon_t$
+    \STATE $t \gets t + h$
+\ENDFOR
+\RETURN $X_1$
+\end{algorithmic}
+\end{algorithm}
+```
 
 ---
 

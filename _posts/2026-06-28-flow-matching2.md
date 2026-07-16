@@ -323,17 +323,22 @@ Therefore, flow matching training consists of minimizing the conditional flow ma
 
 After training $$u_t^{\theta}$$, we can simulate the flow model with algorithm mentioned in the last post to generate samples from the data distribution $$p_{\text{data}}$$.
 
-Algorithm to train flow matching model (for Gaussian CondOT path $$p_t(x \mid z) = \mathcal{N}(tz, (1-t)^2 I)$$)
-
-Require: A dataset of samples $$z \sim p_{\text{data}}$$, neural network $$u_t^{\theta}$$
-1. **for** each mini-batch of data points **do**
-2.   sample a data example $$z$$ from the dataset.
-3.   sample a time $$t \sim U[0, 1]$$.
-4.   sample a noise $$\epsilon \sim \mathcal{N}(0, I)$$.
-5.   compute $$x =  tz + (1-t)\epsilon$$. (General case: $$x \sim p_t(\cdot \mid z)$$)
-6.   compute loss $$\mathcal{L}_{\text{CFM}}(\theta) = \|u_t^{\theta}(x) - (z - \epsilon) \|_2^2$$. (General case:$$= \|u_t^{\theta}(x) - u_t^{\text{target}}(x \mid z)\|_2^2$$)
-7.   update $$\theta \leftarrow \text{gradUpdate}(\mathcal{L}_{\text{CFM}}(\theta))$$.
-8. **end for**
+```pseudocode
+\begin{algorithm}
+\caption{Flow matching training (Gaussian CondOT path $p_t(x \mid z) = \mathcal{N}(tz, (1-t)^2 I)$)}
+\begin{algorithmic}
+\REQUIRE dataset of samples $z \sim p_{\text{data}}$, neural network $u_t^\theta$
+\REPEAT
+    \STATE sample a data example $z$ from the dataset
+    \STATE sample a time $t \sim \mathrm{Uniform}[0,1]$
+    \STATE sample noise $\epsilon \sim \mathcal{N}(0, I)$
+    \STATE $x \gets t z + (1-t)\epsilon$ \COMMENT{general case: $x \sim p_t(\cdot \mid z)$}
+    \STATE $\mathcal{L}(\theta) \gets \lVert u_t^\theta(x) - (z - \epsilon) \rVert_2^2$ \COMMENT{general case: $\lVert u_t^\theta(x) - u_t^{\text{target}}(x \mid z) \rVert_2^2$}
+    \STATE $\theta \gets \mathrm{GradientUpdate}(\theta, \nabla_\theta \mathcal{L}(\theta))$
+\UNTIL{converged}
+\end{algorithmic}
+\end{algorithm}
+```
 
 > **CondOT** means Conditional Optimal Transport. It is a special case of the Gaussian conditional probability path with schedulers $$\alpha_t = t$$ and $$\beta_t = 1-t$$. The trajectory is a straight line, compared to the curved paths in classical DDPM. Classical methods are heavily governed by Brownian motion, so they must take small steps. CondOT allows numerical ODE solvers (like Euler or Runge-Kutta) to take massive step sizes, enabling high-quality generation in very few steps.
 

@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.css">
     <link rel="stylesheet" href="{{ '/assets/css/global.css' | relative_url }}">
 </head>
 <body class="bg-light" {{ page.body_attr }}>
@@ -33,6 +34,7 @@
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             renderMathInElement(document.body, {
@@ -44,6 +46,27 @@
               ],
               throwOnError : false
             });
+
+            // Render LaTeX-style algorithm blocks written as ```pseudocode fenced
+            // code. pseudocode.js typesets them like the LaTeX algorithmic package
+            // (uses KaTeX for the math inside). KaTeX auto-render above skips
+            // <pre>/<code>, so the source is untouched until we render it here.
+            if (window.pseudocode) {
+              document.querySelectorAll('.language-pseudocode').forEach(function (el) {
+                var src = el.textContent.replace(/\s+$/, '');
+                // replace the whole code block: <pre><code class=...> (kramdown)
+                // or <div class="language-pseudocode ..."> (Rouge highlighting)
+                var target = el.closest('pre') || el;
+                var container = document.createElement('div');
+                container.className = 'pseudocode-block';
+                try {
+                  container.innerHTML = pseudocode.renderToString(src, { lineNumber: true });
+                  target.replaceWith(container);
+                } catch (err) {
+                  console.error('[pseudocode] render error:', err);
+                }
+              });
+            }
         });
     </script>
     <script src="{{ '/assets/js/common.js' | relative_url }}"></script>
