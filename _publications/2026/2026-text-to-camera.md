@@ -3,9 +3,9 @@ title:          "TKCAM: Text and Keyframe to Camera Trajectory Generation"
 date:           2026-06-01 00:00:00 +0800
 selected:       true
 pub:            "Advances in Neural Information Processing Systems (NeurIPS)"
-pub_pre:        "Submitted to "
-pub_post:       ". Under Review."
-pub_last:       ' <span class="badge badge-pill badge-publication badge-warning">Under Review</span>'
+pub_pre:        ""
+pub_post:       ","
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Poster</span>'
 pub_date:       "2026"
 
 abstract: >-
@@ -26,4 +26,6 @@ authors:
 links:
   Paper (Coming Soon): ~
   Code (Coming Soon): ~
+  Dataset (Coming Soon): ~
+  Webpage (Coming Soon): ~
 ---
