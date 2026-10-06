@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102f2d">
+  <meta name="description" content="TKCAM generates coherent camera trajectories from text and sparse RGB keyframes using hierarchical motion tokens and masked transformers.">
+  <meta name="keywords" content="TKCAM, camera trajectory generation, text to camera, keyframe conditioning, masked generative modeling, RealEstate10K-Cap">
+  <meta name="author" content="Haozhe Yang, Zhiyang Dou, Zekai Gu, Cheng Lin, Wenping Wang, Yuan Liu, Taku Komura">
+  <link rel="canonical" href="https://linearalgebrayhz.github.io/projects/TKCAM/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TKCAM: Text and Keyframe to Camera Trajectory Generation">
+  <meta property="og:description" content="Generate coherent camera motion from language and sparse visual observations.">
+  <meta property="og:url" content="https://linearalgebrayhz.github.io/projects/TKCAM/">
+  <meta property="og:image" content="https://linearalgebrayhz.github.io/projects/TKCAM/static/images/paper/method.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TKCAM: Text and Keyframe to Camera Trajectory Generation">
+  <meta name="twitter:description" content="Camera trajectory generation with text and sparse RGB keyframes.">
+  <meta name="twitter:image" content="https://linearalgebrayhz.github.io/projects/TKCAM/static/images/paper/method.png">
+  <meta name="citation_title" content="TKCAM: Text and Keyframe to Camera Trajectory Generation">
+  <meta name="citation_author" content="Yang, Haozhe">
+  <meta name="citation_author" content="Dou, Zhiyang">
+  <meta name="citation_author" content="Gu, Zekai">
+  <meta name="citation_author" content="Lin, Cheng">
+  <meta name="citation_author" content="Wang, Wenping">
+  <meta name="citation_author" content="Liu, Yuan">
+  <meta name="citation_author" content="Komura, Taku">
+  <meta name="citation_pdf_url" content="https://linearalgebrayhz.github.io/projects/TKCAM/static/pdfs/TKCAM_preprint.pdf">
+  <title>TKCAM | Text and Keyframe to Camera Trajectory Generation</title>
+  <link rel="icon" href="static/images/tkcam-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,500,20;9..144,600,20;9..144,700,20&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/tkcam.css">
+  <script defer src="static/js/tkcam.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "TKCAM: Text and Keyframe to Camera Trajectory Generation",
+    "author": [
+      {"@type": "Person", "name": "Haozhe Yang"},
+      {"@type": "Person", "name": "Zhiyang Dou"},
+      {"@type": "Person", "name": "Zekai Gu"},
+      {"@type": "Person", "name": "Cheng Lin"},
+      {"@type": "Person", "name": "Wenping Wang"},
+      {"@type": "Person", "name": "Yuan Liu"},
+      {"@type": "Person", "name": "Taku Komura"}
+    ],
+    "datePublished": "2026",
+    "url": "https://linearalgebrayhz.github.io/projects/TKCAM/",
+    "encoding": {"@type": "MediaObject", "contentUrl": "https://linearalgebrayhz.github.io/projects/TKCAM/static/pdfs/TKCAM_preprint.pdf"},
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="TKCAM home"><span class="brand-mark">T<span>·</span>K</span><span>TKCAM</span></a>
+      <nav aria-label="Page navigation">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#results">Results</a>
+      </nav>
+      <a class="nav-paper" href="static/pdfs/TKCAM_preprint.pdf">Read the paper <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow light"><span class="signal"></span> NeurIPS 2026 poster <span class="eyebrow-separator">/</span> preprint</p>
+          <h1><span>TKCAM</span><small>Text and Keyframe to<br>Camera Trajectory Generation</small></h1>
+          <p class="hero-lede">Direct the camera with words. Anchor the shot with a few images. Generate the motion between them.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="static/pdfs/TKCAM_preprint.pdf">Read preprint <span aria-hidden="true">↗</span></a>
+            <a class="button secondary" href="https://github.com/linearalgebrayhz/TKCAM" target="_blank" rel="noopener noreferrer">Explore code <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Schematic camera trajectory traveling between visual keyframes">
+          <div class="art-label"><span>INPUT</span> TEXT + SPARSE RGB KEYFRAMES</div>
+          <svg viewBox="0 0 610 460" aria-hidden="true">
+            <defs>
+              <linearGradient id="pathGradient" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#edb984"/><stop offset=".52" stop-color="#8bd4c2"/><stop offset="1" stop-color="#e9e59e"/></linearGradient>
+              <filter id="softGlow"><feGaussianBlur stdDeviation="10"/></filter>
+            </defs>
+            <path class="art-gridline" d="M55 340 315 410 555 300M65 277 320 345 555 241M75 214 327 281 560 183M90 160 330 224 565 128M100 110 345 170 572 78M55 340 100 110M145 366 190 134M235 390 274 154M325 411 355 177M415 369 442 135M505 324 529 95"/>
+            <path d="M90 315 C165 329 177 259 247 281 S335 320 374 223 S471 151 526 108" fill="none" stroke="#7ad7bb" stroke-width="23" opacity=".16" filter="url(#softGlow)"/>
+            <path d="M90 315 C165 329 177 259 247 281 S335 320 374 223 S471 151 526 108" fill="none" stroke="url(#pathGradient)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M90 315 C165 329 177 259 247 281 S335 320 374 223 S471 151 526 108" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="2 10" opacity=".65"/>
+            <g class="camera-dot"><circle cx="90" cy="315" r="11"/><circle cx="247" cy="281" r="8"/><circle cx="374" cy="223" r="8"/><circle cx="526" cy="108" r="11"/></g>
+            <g class="frame start"><rect x="42" y="215" width="94" height="63" rx="5"/><path d="M48 261 78 238 98 251 119 229"/><circle cx="110" cy="234" r="5"/><text x="47" y="207">FRAME 01</text></g>
+            <g class="frame end"><rect x="457" y="27" width="105" height="68" rx="5"/><path d="M464 81 493 54 520 70 554 39"/><circle cx="536" cy="48" r="5"/><text x="461" y="20">FRAME 02</text></g>
+            <text class="path-tag" x="225" y="245">GENERATED PATH</text>
+          </svg>
+          <div class="art-label art-bottom"><span>OUTPUT</span> COHERENT 6-DOF CAMERA MOTION</div>
+        </div>
+      </div>
+      <div class="shell hero-meta">
+        <div class="author-list">
+          <a href="https://linearalgebrayhz.github.io/">Haozhe Yang<sup>1</sup></a>
+          <span>Zhiyang Dou<sup>1,†</sup></span>
+          <span>Zekai Gu<sup>2</sup></span>
+          <span>Cheng Lin<sup>3</sup></span>
+          <span>Wenping Wang<sup>4</sup></span>
+          <span>Yuan Liu<sup>2</sup></span>
+          <span>Taku Komura<sup>1,†</sup></span>
+        </div>
+        <p><sup>1</sup> The University of Hong Kong &nbsp; <sup>2</sup> HKUST &nbsp; <sup>3</sup> Macau University of Science and Technology &nbsp; <sup>4</sup> Texas A&amp;M University <span class="corresponding">† Corresponding authors</span></p>
+      </div>
+    </section>
+
+    <section class="section intro" id="overview">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">01 / THE IDEA</p>
+          <h2>Camera motion, <em>directed</em> your way.</h2>
+        </div>
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p class="large-copy">Language describes the shot. Sparse RGB frames show where it should go. TKCAM turns both into a smooth, temporally coherent camera trajectory.</p>
+            <p>Existing text-driven methods can miss spatial detail, while explicit camera-state controls demand technical input. TKCAM uses selected image frames as soft visual guidance and generates the in-between motion without requiring users to specify camera extrinsics.</p>
+          </div>
+          <div class="input-card">
+            <p class="mini-label">EXAMPLE DIRECTION</p>
+            <blockquote>“The camera dollies forward, then arcs left around the living room.”</blockquote>
+            <div class="input-flow"><span>TEXT PROMPT</span><i>+</i><span>RGB KEYFRAMES</span><i>→</i><strong>CAMERA PATH</strong></div>
+          </div>
+        </div>
+        <div class="highlights" aria-label="Main contributions">
+          <div><span class="highlight-number">01</span><h3>Text or text + keyframes</h3><p>One framework supports open-ended prompts and sparse visual guidance.</p></div>
+          <div><span class="highlight-number">02</span><h3>Coarse to fine generation</h3><p>Hierarchical motion tokens separate trajectory structure from finer detail.</p></div>
+          <div><span class="highlight-number">03</span><h3>Cross-domain evaluation</h3><p>A universal CLaTr evaluator compares motion across multiple domains.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method-section" id="method">
+      <div class="shell">
+        <div class="section-head narrow">
+          <p class="eyebrow">02 / THE METHOD</p>
+          <h2>From a continuous path to discrete motion tokens.</h2>
+          <p>TKCAM represents each camera pose with a 12-dimensional kinematic feature: position, velocity, and continuous 6D rotation.</p>
+        </div>
+        <figure class="paper-figure method-figure">
+          <img src="static/images/paper/method.png" alt="TKCAM pipeline: RVQ tokenizes camera trajectories, a masked base transformer predicts motion using text and keyframes, and a residual transformer refines the result." width="1996" height="955">
+          <figcaption>TKCAM pipeline from the preprint. Text and sparse visual tokens condition both masked transformer stages.</figcaption>
+        </figure>
+        <div class="method-steps">
+          <div><span>01 / ENCODE</span><h3>Tokenize the trajectory</h3><p>A residual vector quantizer maps continuous camera motion into hierarchical discrete tokens.</p></div>
+          <div><span>02 / GENERATE</span><h3>Recover the structure</h3><p>A masked base transformer attends to text and timestamped visual keyframes.</p></div>
+          <div><span>03 / REFINE</span><h3>Restore the detail</h3><p>A residual masked transformer builds finer motion, then the decoder reconstructs the path.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dataset-section" id="dataset">
+      <div class="shell">
+        <div class="dataset-layout">
+          <div>
+            <p class="eyebrow">03 / THE DATASET</p>
+            <h2>RealEstate10K-Cap</h2>
+            <p class="large-copy">Scene-aware camera motion captions grounded in geometrically reconstructed indoor footage.</p>
+            <p>The dataset combines reliable camera trajectories from RealEstate10K with directorial captions. A two-stage captioning pipeline first derives camera motion from pose geometry, then adds visual scene context while keeping that motion description fixed.</p>
+          </div>
+          <div class="stats">
+            <div><strong>25K</strong><span>annotated trajectories</span></div>
+            <div><strong>5M</strong><span>video frames</span></div>
+            <div><strong>~50h</strong><span>continuous footage</span></div>
+          </div>
+        </div>
+        <figure class="paper-figure distribution-figure">
+          <img loading="lazy" src="static/images/paper/distribution.png" alt="Motion distribution comparing RealEstate10K-Cap with DataDoP and E.T.; RealEstate10K-Cap contains a high proportion of compound camera motions." width="817" height="355">
+          <figcaption>Motion categories in RealEstate10K-Cap and prior camera trajectory datasets.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">04 / RESULTS</p>
+          <h2>Better alignment. More faithful trajectories.</h2>
+          <p>On the mixed-domain benchmark, TKCAM leads the compared methods on FID, matching score, and retrieval in the text-only track. Sparse RGB keyframes improve it further.</p>
+        </div>
+        <div class="results-grid">
+          <article class="result-card">
+            <p class="mini-label">TRACK A · TEXT ONLY · 1,500 SAMPLES</p>
+            <div class="metric"><strong>0.529</strong><span>FID ↓</span></div>
+            <div class="metric-secondary"><strong>9.60%</strong><span>R@10 ↑</span></div>
+            <p>Best FID, matching, and retrieval among the compared text-conditioned methods.</p>
+          </article>
+          <article class="result-card accented">
+            <p class="mini-label">TRACK B · SPARSE KEYFRAMES · 994 SAMPLES</p>
+            <div class="metric"><strong>0.503</strong><span>FID ↓</span></div>
+            <div class="metric-secondary"><strong>12.67%</strong><span>R@10 ↑</span></div>
+            <p>Sparse visual observations improve realism and text–trajectory alignment.</p>
+          </article>
+        </div>
+        <p class="results-note">FID is computed on Universal CLaTr features; lower is better. R@10 is text–trajectory retrieval over each track's evaluation set; higher is better. The tracks use different sample counts.</p>
+        <figure class="paper-figure comparison-figure">
+          <img loading="lazy" src="static/images/paper/comparison.png" alt="Qualitative camera trajectory comparison across TKCAM, ground truth, GenDoP, E.T., Director3D, and CCD on three prompts." width="716" height="937">
+          <figcaption>Qualitative comparison: TKCAM follows compound camera directions across three sample prompts.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section application-section" id="application">
+      <div class="shell application-layout">
+        <div>
+          <p class="eyebrow">05 / APPLICATION</p>
+          <h2>A path for downstream video synthesis.</h2>
+          <p>With a directorial prompt and first and last frame observations, TKCAM generates a trajectory that can serve as a geometric prior for a video synthesis pipeline.</p>
+        </div>
+        <figure class="paper-figure">
+          <img loading="lazy" src="static/images/paper/application.png" alt="Generated TKCAM camera path used as a motion prior to render a sequence of indoor video frames." width="715" height="384">
+          <figcaption>Example from the preprint using Diffusion-as-Shader to render video frames.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section abstract-section" id="abstract">
+      <div class="shell abstract-layout">
+        <div><p class="eyebrow">THE PAPER</p><h2>Abstract</h2></div>
+        <p>Generating high-quality and controllable camera motion is essential for AI-assisted cinematography, video synthesis, and 3D scene understanding. We introduce TKCAM, a text- and keyframe-conditioned camera-motion synthesis framework based on generative masked modeling. We represent camera dynamics using a 12-dimensional kinematic feature comprising position, velocity, and a continuous rotation representation and discretize them into hierarchical motion tokens via a Residual Vector Quantizer (RVQ). A two-stage masked transformer architecture then learns to reconstruct and refine these tokens, utilizing explicit self- and cross-attention modules for multimodal conditioning. A central feature of our framework is sparse visual keyframe conditioning: users can provide free-form text prompts together with RGB observations at selected timestamps, which provide temporally localized visual guidance for generating coherent in-between trajectories. Furthermore, to advance evaluation standards, we curate RealEstate10K-Cap, a large-scale text-camera dataset, and establish a cross-domain benchmark with a Universal CLaTr Evaluator. Extensive experiments demonstrate that TKCAM surpasses recent state-of-the-art baselines on Fréchet distance (FID), text-motion matching scores, and retrieval metrics (R@K), while additional analyses evaluate temporal smoothness and cross-domain generalization.</p>
+      </div>
+    </section>
+
+    <section class="section citation-section" id="citation">
+      <div class="shell citation-layout">
+        <div>
+          <p class="eyebrow">CITE THIS WORK</p>
+          <h2>BibTeX</h2>
+          <p>If TKCAM helps your research, please cite the preprint.</p>
+          <div class="citation-links"><a href="static/pdfs/TKCAM_preprint.pdf">Preprint PDF ↗</a><a href="https://github.com/linearalgebrayhz/TKCAM" target="_blank" rel="noopener noreferrer">Code repository ↗</a></div>
+        </div>
+        <div class="code-panel">
+          <button id="copy-citation" type="button" aria-label="Copy BibTeX citation">Copy BibTeX</button>
+          <pre id="bibtex">@misc{yang2026tkcam,
+  title={TKCAM: Text and Keyframe to Camera Trajectory Generation},
+  author={Haozhe Yang and Zhiyang Dou and Zekai Gu and Cheng Lin and Wenping Wang and Yuan Liu and Taku Komura},
+  year={2026},
+  note={Preprint},
+  url={https://linearalgebrayhz.github.io/projects/TKCAM/}
+}</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><strong>TKCAM</strong><span>Text and Keyframe to Camera Trajectory Generation</span></div>
+      <div><a href="https://linearalgebrayhz.github.io/">Haozhe Yang's homepage</a><a href="https://github.com/linearalgebrayhz/TKCAM-project-page">Website source</a></div>
+    </div>
+    <p class="shell credits">Page structure inspired by the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>. Research figures © their respective authors.</p>
+  </footer>
+</body>
+</html>

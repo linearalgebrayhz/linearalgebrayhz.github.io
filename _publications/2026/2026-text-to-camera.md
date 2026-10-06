@@ -10,8 +10,8 @@ pub_date:       "2026"
 
 abstract: >-
   We introduce TKCAM, a text- and keyframe-conditioned camera trajectory generation framework based on generative masked modeling.
-  Camera dynamics are formulated as continuous 12-DoF kinematic sequences and discretized into hierarchical motion tokens via a Residual Vector Quantizer (RVQ),
-  enabling a two-stage masked transformer to reconstruct temporally coherent trajectories from free-form text prompts and sparse key poses.
+  Camera dynamics are formulated as continuous 12-dimensional kinematic sequences and discretized into hierarchical motion tokens via a Residual Vector Quantizer (RVQ),
+  enabling a two-stage masked transformer to reconstruct temporally coherent trajectories from free-form text prompts and sparse RGB keyframes.
   TKCAM significantly surpasses recent state-of-the-art baselines on FID, text-motion matching, and retrieval metrics (R@K).
 
 authors:
@@ -24,8 +24,7 @@ authors:
   - Taku Komura
 
 links:
-  Paper (Coming Soon): ~
-  Code (Coming Soon): ~
-  Dataset (Coming Soon): ~
-  Webpage (Coming Soon): ~
+  Paper: /projects/TKCAM/static/pdfs/TKCAM_preprint.pdf
+  Code: https://github.com/linearalgebrayhz/TKCAM
+  Webpage: /projects/TKCAM/
 ---
