@@ -1,7 +1,8 @@
 ---
 title:          "TKCAM: Text and Keyframe to Camera Trajectory Generation"
-date:           2026-06-01 00:00:00 +0800
+date:           2026-10-08 00:00:00 +0800
 selected:       true
+cover:          "/projects/TKCAM/static/images/paper/application.png"
 pub:            "Advances in Neural Information Processing Systems (NeurIPS)"
 pub_pre:        ""
 pub_post:       ","
@@ -24,7 +25,7 @@ authors:
   - Taku Komura
 
 links:
-  Paper: /projects/TKCAM/static/pdfs/TKCAM_preprint.pdf
+  Paper: https://arxiv.org/abs/2610.11105
   Code: https://github.com/linearalgebrayhz/TKCAM
   Webpage: /projects/TKCAM/
 ---
