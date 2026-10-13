@@ -10,7 +10,7 @@ positions:
 
 email: "yhz2004@connect.hku.hk"
 # cv_link: link-to-your-cv-file
-# gscholar: 
+gscholar: AIkd240AAAAJ
 github: linearalgebrayhz
 # twitter: your_twitter_id  # Do not include the '@' symbol
 linkedin: 颢喆-杨-661a82264
@@ -24,6 +24,9 @@ short_bio_text_justify: false
 short_bio: >-
   <p>
     I am a final-year undergraduate studying Computer Science and Mathematics at the University of Hong Kong.
+  </p>
+  <p>
+    I am seeking PhD opportunities for Fall 2027.
   </p>
   <p>
     My research lies at the intersection of <strong>multimodal generative modeling</strong>, <strong>spatial intelligence</strong>, and <strong>embodied AI</strong>. I am particularly interested in how intelligent systems can build grounded representations of dynamic 3D environments and generate coherent behaviors from multimodal signals such as language, vision, speech, and motion.
