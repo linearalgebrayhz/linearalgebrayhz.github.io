@@ -34,6 +34,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/tkcam.css">
   <script defer src="static/js/tkcam.js"></script>
+  <script defer src="static/js/showcase.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,6 +90,32 @@
       <img src="static/images/paper/application.png" alt="An example prompt and two keyframes produce a TKCAM camera trajectory that guides video synthesis." width="715" height="384">
       <figcaption>Text and visual keyframes guide a camera path, which can serve as a motion prior for video synthesis.</figcaption>
     </figure>
+
+    <section class="section showcase" id="showcase" aria-labelledby="showcase-title">
+      <h2 id="showcase-title">Camera motion in action</h2>
+      <p class="showcase-intro">Two text-guided examples. The camera pose animation follows the DaS video timeline.</p>
+      <div class="showcase-tabs" role="tablist" aria-label="Choose a camera motion example">
+        <button class="showcase-tab is-active" type="button" role="tab" aria-selected="true" data-example="000952">01 <span>Approaching the house</span></button>
+        <button class="showcase-tab" type="button" role="tab" aria-selected="false" data-example="000596">02 <span>Revealing the bedroom</span></button>
+      </div>
+      <div class="showcase-grid">
+        <div class="showcase-panel showcase-text">
+          <div class="showcase-label">Text description</div>
+          <p id="showcase-prompt">The camera dollies forward slowly and smoothly across the dry, sloping lawn, steadily approaching the white house while maintaining a wide-angle view of the scene.</p>
+          <span class="showcase-tag">Text + first frame</span>
+        </div>
+        <div class="showcase-panel showcase-motion">
+          <div class="showcase-label">TKCAM trajectory <span id="showcase-frame">01 / 49</span></div>
+          <canvas id="showcase-canvas" width="480" height="350" role="img" aria-label="Animated three-dimensional TKCAM camera trajectory, relative to the first frame">Your browser does not support canvas animation.</canvas>
+          <p class="showcase-note">Camera-to-world · +X right, +Y up, −Z forward <span class="drag-hint">· Drag to orbit</span></p>
+        </div>
+        <div class="showcase-panel showcase-render">
+          <div class="showcase-label">DaS-rendered video</div>
+          <video id="showcase-video" src="static/videos/000952.mp4" controls muted loop playsinline preload="metadata" aria-label="DaS video rendered from the TKCAM camera path"></video>
+          <p class="showcase-note">Video synthesis guided by the generated camera path.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="section abstract" id="abstract">
       <h2>Abstract</h2>
