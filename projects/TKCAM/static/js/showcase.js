@@ -231,7 +231,7 @@
   });
   canvas.addEventListener("pointermove", (event) => {
     if (!state.dragging) return;
-    state.azimuth += (event.clientX - state.pointerX) * 0.008;
+    state.azimuth -= (event.clientX - state.pointerX) * 0.008;
     state.elevation = Math.max(0.12, Math.min(1.32, state.elevation + (event.clientY - state.pointerY) * 0.008));
     state.pointerX = event.clientX;
     state.pointerY = event.clientY;
