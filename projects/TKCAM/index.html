@@ -143,22 +143,23 @@
 
     <section class="section" id="results">
       <h2>Results</h2>
-      <p class="section-intro">On a mixed-domain benchmark, TKCAM improves trajectory realism and text-motion alignment. Sparse visual keyframes provide an additional gain.</p>
+      <p class="section-intro">TKCAM outperforms fine-tuned GenDoP within both benchmark tracks. Additional sparse keyframes improve text-motion alignment over first-frame conditioning, with nearly unchanged FID.</p>
       <div class="table-wrap">
         <table>
-          <caption>Selected quantitative results from the preprint</caption>
+          <caption>Selected quantitative results updated for the camera-ready version</caption>
           <thead><tr><th scope="col">Condition</th><th scope="col">Method</th><th scope="col">FID ↓</th><th scope="col">Matching ↑</th><th scope="col">R@10 ↑</th></tr></thead>
           <tbody>
             <tr class="track"><th colspan="5" scope="rowgroup">Text only · 1,500 samples</th></tr>
-            <tr><td>Text</td><td>GenDoP (fine-tuned)</td><td>0.593</td><td>0.082</td><td>7.80%</td></tr>
-            <tr class="ours"><td>Text</td><td>TKCAM</td><td>0.529</td><td>0.100</td><td>9.60%</td></tr>
+            <tr><td>Text</td><td>GenDoP (fine-tuned)</td><td>0.507</td><td>0.069</td><td>5.40%</td></tr>
+            <tr class="ours"><td>Text</td><td>TKCAM</td><td>0.476</td><td>0.094</td><td>8.40%</td></tr>
             <tr class="track"><th colspan="5" scope="rowgroup">Visual keyframes + text · 994 samples</th></tr>
-            <tr><td>RGB-D + text</td><td>GenDoP (fine-tuned)</td><td>0.616</td><td>0.109</td><td>11.07%</td></tr>
-            <tr class="ours"><td>Sparse RGB + text</td><td>TKCAM</td><td>0.503</td><td>0.129</td><td>12.67%</td></tr>
+            <tr><td>RGB-D + text</td><td>GenDoP (fine-tuned)</td><td>0.566</td><td>0.098</td><td>8.25%</td></tr>
+            <tr class="ours"><td>First-frame RGB + text</td><td>TKCAM</td><td>0.461</td><td>0.120</td><td>12.27%</td></tr>
+            <tr class="ours"><td>Sparse RGB + text</td><td>TKCAM</td><td>0.462</td><td>0.129</td><td>15.19%</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-note">FID is measured on Universal CLaTr features. R@10 is retrieval on each track's evaluation set. Full results and experimental details are in the <a href="https://arxiv.org/abs/2610.11105">paper</a>.</p>
+      <p class="table-note">FID is measured on Universal CLaTr features. Matching is mean cosine similarity in [−1, 1]. R@10 is text-to-trajectory retrieval on each track's full evaluation set. These updated results supersede the earlier values shown on this page; the linked <a href="https://arxiv.org/abs/2610.11105">preprint</a> may contain earlier results.</p>
       <figure class="figure figure-qualitative">
         <img loading="lazy" src="static/images/paper/comparison.png" alt="Qualitative comparison of TKCAM camera paths with ground truth, GenDoP, E.T., Director3D, and CCD." width="716" height="937">
         <figcaption>Qualitative camera trajectory comparison. TKCAM follows compound directorial prompts across these examples.</figcaption>
