@@ -21,4 +21,4 @@ course_groups:
 ---
 
 {% include widgets/courses_card.html %}
-<script src="{{ '/assets/js/courses.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/courses.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

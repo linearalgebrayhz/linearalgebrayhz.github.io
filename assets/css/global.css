@@ -133,6 +133,11 @@ div.lazy {
 }
 
 /* ---- Courses: compact subject tabs and course lists ---- */
+.courses-card h4 {
+    font-size: 1.35rem;
+    line-height: 1.4;
+}
+
 .courses-intro {
     margin-bottom: 1.25rem;
     font-size: 0.875rem;
@@ -153,6 +158,7 @@ div.lazy {
 }
 
 .course-tab {
+    min-height: 2.5rem;
     padding: 0.5rem 0.75rem;
     border: 1px solid transparent;
     border-radius: 0.3rem;
@@ -192,18 +198,24 @@ div.lazy {
 }
 
 .course-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .course-item {
+    min-width: 0;
     padding: 0.85rem 0;
     border-bottom: 1px solid #eef0f3;
 }
 
-.course-item:last-child {
-    border-bottom: 0;
+@media (min-width: 768px) {
+    .course-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 2rem;
+    }
 }
 
 .course-item-header {
