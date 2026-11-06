@@ -132,3 +132,132 @@ div.lazy {
     vertical-align: -2px;
 }
 
+/* ---- Courses: compact subject tabs and course lists ---- */
+.courses-intro {
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+.course-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid #e5e9ee;
+}
+
+.course-tabs[hidden],
+.course-panel[hidden] {
+    display: none;
+}
+
+.course-tab {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    background: transparent;
+    color: #525d69;
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.course-tab:hover {
+    background: #f1f4f8;
+    color: #243e5a;
+}
+
+.course-tab[aria-selected="true"] {
+    background: #eaf1f9;
+    color: #244f7a;
+    border-color: #d6e3f1;
+    font-weight: 700;
+}
+
+.course-tab:focus-visible,
+.course-panel:focus-visible {
+    outline: 2px solid #244f7a;
+    outline-offset: 3px;
+}
+
+.course-panel-heading {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+}
+
+.courses-enhanced .course-panel-heading {
+    display: none;
+}
+
+.course-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.course-item {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #eef0f3;
+}
+
+.course-item:last-child {
+    border-bottom: 0;
+}
+
+.course-item-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.5rem;
+}
+
+.course-name {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.course-description {
+    margin: 0.2rem 0 0;
+    color: #626c76;
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+.course-note,
+.course-status {
+    display: inline-block;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.25rem;
+    background: #f0f2f5;
+    color: #59636f;
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+.course-status {
+    background: #fff4d6;
+    color: #775b18;
+}
+
+.course-skills {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e5e9ee;
+}
+
+.course-skills h5 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.course-skills h6 {
+    font-size: 0.8rem;
+}
+
+.course-skills .course-note {
+    margin: 0 0.15rem 0.35rem 0;
+}
+

@@ -2,6 +2,23 @@
 layout: default
 title: Courses
 navbar_title: Courses
+course_groups:
+  - id: computer-science
+    title: Computer Science
+    categories: [computer_science, core_cs, other_cs_interests]
+  - id: mathematics
+    title: Mathematics
+    categories: [mathematics]
+  - id: statistics
+    title: Statistics
+    categories: [statistics]
+  - id: machine-learning
+    title: Machine Learning & AI
+    categories: [ai_ml]
+  - id: graphics
+    title: Graphics & Animation
+    categories: [graphics]
 ---
 
 {% include widgets/courses_card.html %}
+<script src="{{ '/assets/js/courses.js' | relative_url }}" defer></script>
